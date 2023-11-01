@@ -1,5 +1,3 @@
-var validade = new Date('2026-12-31T00:00:00'); 
-var situacao = '';
 // Obtenha a data atual
 var dataAtual = new Date();
 
