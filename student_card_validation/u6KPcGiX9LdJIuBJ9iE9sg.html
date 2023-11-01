@@ -1,6 +1,10 @@
 
 <!DOCTYPE html>
 <html>
+<script type="text/javascript">
+													var validade = new Date('2027-01-01'); //COLOCAR DATA COM 1 DIA A MAIS
+  var situacao = '';
+</script>
 	<head>
 		<title>Clube Do Estudante - cde</title>
 		<meta name="title" content="Clube do Estudante - cde">
@@ -12,7 +16,8 @@
 
   </head>
 				<body>
-					<div class="flex center around vh-100 bg-success">
+						<body>
+					<div class="flex center around vh-100">
 						<div class="h-60 w-60 flex center around column">
 							<div class="w-30 flex center around mb-5 ">
 								<img style="max-width:250px" src="https://clubedoestudante.github.io/clubedoestudante/new_logo-9344e4c7b67a874d6d94cb80e5007c0ddd41f7dcc3ca384aae28dce99e43a591.png"/>
@@ -21,22 +26,35 @@
 								<img src="https://clubedoestudante.github.io/clubedoestudante/circle.png"/>
 								<br>
 									<br>
-										<p class="text-white fs-20">Carteirinha válida!
-        </p>
+										<p id="resultadoParagrafo" class="text-white fs-20">Valida ou invalida</p>
 										<div class="card-details">
-											<p class="text-white">
-												<span class="fw-700">Nome:</span> Bruno Zanicheli de Souza</p>
-											<p class="text-white">
-												<span class="fw-700">Instituição de ensino:</span> UNIVESP</p>
-											<p class="text-white">
-												<span class="fw-700">Código de uso:</span> 61q35wFN862fXnKgclR42</p>
+											<p class="text-white"><span class="fw-700">Nome:					</span> Bruno Zanicheli de Souza</p>
+											<p class="text-white"><span class="fw-700">Instituição de ensino:	</span> UNIVESP</p>
+											<p class="text-white"><span class="fw-700">Código de uso:			</span> 61q35wFN862fXnKgclR42</p>
 										</div>
 									</div>
 									<a class="w-100 btn btn-primary" href="https://clubedoestudante.github.io/clubedoestudante/snemastercertificate_tlmgci.ac" target="_blank">
         Baixar certificado de atributos
 	      </a>
-		  <div class="w-100" style="margin:-15px;padding:8px;text-align:center;background:#00c854;color:#fff;}">Válida até 31/12/2026</div>
 								</div>
 							</div>
+														<script>
+							// Obtenha a data atual
+							var dataAtual = new Date();
+
+							// Defina a data de comparação (no formato "Ano-Mês-Dia")
+							var dataComparacao = validade;
+
+							// Verifique se a data atual é menor ou igual à data de comparação
+							if (dataAtual <= dataComparacao) { 
+							//Se for verdade, defina o fundo como verde 
+							document.body.style.backgroundColor='#198754' ; 
+							situacao = 'Carteirinha válida até '+ validade.toLocaleDateString(); } 
+							else { 
+							//Caso contrário, defina o fundo como vermelho 
+							document.body.style.backgroundColor='#dc3545' ; 
+							situacao = 'Carteirinha venceu em ' + validade.toLocaleDateString(); }
+							document.getElementById("resultadoParagrafo").textContent = situacao;
+							</script>
 						</body>
 					</html>
